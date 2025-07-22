@@ -12,7 +12,7 @@ export default function Download() {
       <main className="container mx-auto px-6 relative z-10">
         <section className="py-20 text-center">
           <h2 className="text-5xl md:text-7xl font-black text-mint-cream mb-6 drop-shadow-lg">
-            Download ChessMD
+            Download
           </h2>
           <p className="text-xl font-medium text-cambridge-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
             Get the latest version of ChessMD for your platform.
