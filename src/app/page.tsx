@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import DownloadButton from "@/components/DownloadButton";
 
 export default function Home() {
   return (
@@ -15,14 +17,20 @@ export default function Home() {
           <p className="text-xl font-medium text-cambridge-blue-100 mb-12 max-w-6xl mx-auto leading-relaxed">
             The ultimate chess learning platform. Improve your game with database analysis, built-in game review, and game study tools.  
           </p>
-          
+          {/* use download button component cuz client side rendering */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-coffee-600 text-mint-cream font-bold px-8 py-4 rounded-lg text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 hover:bg-coffee-700 shadow-lg">
+            <DownloadButton 
+              href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta/setup.exe" 
+              className="bg-coffee-600 text-mint-cream font-bold px-8 py-4 rounded-lg text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 hover:bg-coffee-700 shadow-lg"
+            >
               Download for Windows
-            </button>
-            <button className="border-3 border-mint-cream bg-transparent text-mint-cream font-bold px-8 py-4 rounded-lg text-lg hover:bg-mint-cream hover:text-viridian-600 transition-all duration-200 shadow-lg">
+            </DownloadButton>
+            <DownloadButton 
+              href="" 
+              className="border-3 border-mint-cream bg-transparent text-mint-cream font-bold px-8 py-4 rounded-lg text-lg hover:bg-mint-cream hover:text-viridian-600 transition-all duration-200 shadow-lg"
+            >
               Download for Mac
-            </button>
+            </DownloadButton>
           </div>
         </section>
       </main>
