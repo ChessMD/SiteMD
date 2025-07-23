@@ -6,6 +6,8 @@ import Image from "next/image";
 
 export default function Guide() {
   return (
+    // this is just the user guide on the chessmd github
+    // gonna be honest gpt styled a lot of it cuz i spent all that effort making the markdown file look nice and i dont wanna do it again
     <div className="min-h-screen bg-viridian-400 relative">
       <BackgroundPattern />
       <Navigation currentPage="guide" />

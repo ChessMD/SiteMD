@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+// apparantly props is good practice dont ask me
 interface NavigationProps {
   currentPage?: 'home' | 'guide' | 'download' | 'about';
 }

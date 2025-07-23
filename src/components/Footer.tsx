@@ -2,6 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
+    // rn just logo and 2025 thingy but divs setup to easily format like the stuff u always see in website footers
     <footer className="border-t-2 border-cambridge-blue-600/60 mt-20 bg-cambridge-blue-900/80">
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center">

@@ -9,9 +9,8 @@ interface DownloadButtonProps {
 
 export default function DownloadButton({ href, children, className }: DownloadButtonProps) {
   const handleClick = () => {
-    if (href) {
-      window.open(href, '_blank');
-    }
+    // this is so that i can make the download button run the download, and then redirect to the download page
+    if (href) window.open(href, '_blank');
     window.location.href = '/download';
   };
 

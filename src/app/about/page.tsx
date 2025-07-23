@@ -23,7 +23,7 @@ export default function About() {
                 The software is currently in development, and improving everyday!
               </p>
               <p className="text-lg font-medium text-coffee-700 leading-relaxed">
-                Please report any issues to <a href="mailto:report@chessmd.org" className="text-coffee-500 font-bold hover:text-coffee-400 underline transition-colors">report@chessmd.org</a>
+                Please report any issues to <a href="mailto:report@chessmd.org" className="text-coffee-500 font-bold hover:text-coffee-400 underline transition-colors">report@chessmd.org</a> &#40;this email doesnt work yet&#41;
               </p>
             </div>
           </div>
