@@ -115,7 +115,7 @@ export default function Guide() {
             </div>
 
             <p className="mb-8 text-gray-900">
-              The tab hierarchy provides the framework for organising the program's various windows.
+              The tab hierarchy provides the framework for organising the program&apos;s various windows.
             </p>
 
             <hr className="my-12 border-gray-300" />
@@ -130,12 +130,6 @@ export default function Guide() {
 
             <h3 id="adding-databases" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">2.1 Adding Databases</h3>
             
-            <p className="mb-8 text-gray-900">
-              The user can add a new database by navigating to the main window of the program and clicking on &quot;Add Database&quot;, 
-              selecting a <code>.PGN</code> file from the user&apos;s file system.<br />
-              (See <strong>Figure 1a</strong>)
-            </p>
-
             <p className="mb-8 text-gray-900">
               The user can add a new database by navigating to the main window of the program and clicking on &quot;Add Database&quot;, 
               selecting a <code>.PGN</code> file from the user&apos;s file system.<br />
