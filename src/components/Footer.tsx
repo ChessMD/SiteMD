@@ -12,7 +12,7 @@ export default function Footer() {
             <span className="text-mint-cream font-black">ChessMD</span>
           </div>
           <div className="text-cambridge-blue-200 font-medium text-sm">
-            © 2025 ChessMD. All rights reserved.
+            2025 ChessMD
           </div>
         </div>
       </div>
