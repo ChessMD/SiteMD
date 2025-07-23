@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface NavigationProps {
-  currentPage?: 'home' | 'features' | 'download' | 'about';
+  currentPage?: 'home' | 'guide' | 'download' | 'about';
 }
 
 export default function Navigation({ currentPage = 'home' }: NavigationProps) {
@@ -27,8 +27,8 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
               <div className="bg-transparent"></div>
             </div>
             <div className="relative z-10 flex space-x-8 px-6 py-3">
-              <Link href="/features" className={`transition-colors font-medium ${ currentPage === 'features' ? 'text-cambridge-blue-200' : 'text-mint-cream hover:text-cambridge-blue-200'}`}>
-                Features
+              <Link href="/guide" className={`transition-colors font-medium ${ currentPage === 'guide' ? 'text-cambridge-blue-200' : 'text-mint-cream hover:text-cambridge-blue-200'}`}>
+                Guide
               </Link>
               <Link href="/download" className={`transition-colors font-medium ${ currentPage === 'download' ? 'text-cambridge-blue-200' : 'text-mint-cream hover:text-cambridge-blue-200'}`}>
                 Download
