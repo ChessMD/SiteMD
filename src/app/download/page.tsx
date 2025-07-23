@@ -3,10 +3,12 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import DownloadButton from "@/components/DownloadButton";
+import BackgroundPattern from "@/components/BackgroundPattern";
 
 export default function Download() {
   return (
-    <div className="min-h-screen bg-viridian-400">
+    <div className="min-h-screen bg-viridian-400 relative">
+      <BackgroundPattern />
       <Navigation currentPage="download" />
 
       <main className="container mx-auto px-6 relative z-10">

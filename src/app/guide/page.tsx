@@ -3,9 +3,12 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
+import BackgroundPattern from "@/components/BackgroundPattern";
+
 export default function Guide() {
   return (
-    <div className="min-h-screen bg-viridian-400">
+    <div className="min-h-screen bg-viridian-400 relative">
+      <BackgroundPattern />
       <Navigation currentPage="guide" />
 
       <main className="container mx-auto px-6 py-20 relative z-10">

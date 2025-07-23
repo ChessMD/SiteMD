@@ -2,10 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import BackgroundPattern from "@/components/BackgroundPattern";
 
 export default function About() {
   return (
     <div className="min-h-screen bg-viridian-400">
+      <BackgroundPattern />
       <Navigation currentPage="about" />
 
       <main className="container mx-auto px-6 relative z-10">
