@@ -44,8 +44,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-6">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/15 transition-all duration-300 border border-white/20">
               <div className="bg-coffee-400 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14-7v8a2 2 0 0 1-2 2m-6 0c1 0 2 1 2 2v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6c0-1 1-2 2-2" />
+                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <ellipse cx="12" cy="6" rx="8" ry="3" stroke="currentColor" strokeWidth={2} fill="none"/>
+                  <path stroke="currentColor" strokeWidth={2} fill="none"
+                    d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/>
                 </svg>
               </div>
               <h4 className="text-xl font-bold text-mint-cream mb-3">Database Management</h4>
