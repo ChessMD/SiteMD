@@ -92,7 +92,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4 className="text-xl font-bold text-mint-cream mb-3">
-                UCI Engine Analysis
+                Engine Analysis
               </h4>
               <p className="text-cambridge-blue-100 leading-relaxed">
                 Real-time position analysis with UCI engine support. Get instant
