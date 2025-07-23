@@ -64,7 +64,7 @@ export default function Home() {
               </h4>
               <p className="text-cambridge-blue-100 leading-relaxed">
                 Work with multiple games simultaneously using tabs. Switch between
-                databases and perform parallel analysis effortlessly.
+                databases and study organized!
               </p>
             </div>
 
@@ -80,7 +80,7 @@ export default function Home() {
               </h4>
               <p className="text-cambridge-blue-100 leading-relaxed">
                 Analyze your games with detailed review tools. Add annotations,
-                comments, and identify key moments.
+                comments, and identify brilliant ideas!
               </p>
             </div>
 

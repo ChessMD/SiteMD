@@ -10,7 +10,7 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
   return (
     <header className="container mx-auto px-6 py-8 relative z-10">
       <nav className="flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-3">
+        <Link href="/" className="flex items-center space-x-3 transition transform hover:scale-105 hover:translate-y-0.5 duration-200">
           <div className="w-16 h-16 bg-mint-cream rounded-lg flex items-center justify-center shadow-lg">
             <Image src="/logo.png" alt="ChessMD Logo" width={48} height={48} />
           </div>
