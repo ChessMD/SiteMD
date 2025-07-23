@@ -1,9 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 import BackgroundPattern from "@/components/BackgroundPattern";
+import Image from "next/image";
 
 export default function Guide() {
   return (
@@ -67,7 +66,7 @@ export default function Guide() {
             
             <div className="bg-gray-50 p-4 rounded-lg mb-6">
               <p className="font-semibold mb-2 text-gray-900"><strong>Figure 1a</strong>: Main screen display</p>
-              <img src="/screenshots/Figure_2.1a.png" alt="Figure 2.1a" className="border rounded" />
+              <Image src="/screenshots/Figure_2.1a.png" alt="Figure 2.1a" width={800} height={400} className="border rounded" />
             </div>
 
             <p className="mb-4 text-gray-900">
@@ -78,7 +77,7 @@ export default function Guide() {
 
             <div className="bg-gray-50 p-4 rounded-lg mb-6">
               <p className="font-semibold mb-2 text-gray-900"><strong>Figure 1b</strong>: Database menu</p>
-              <img src="/screenshots/Figure_2.1b.png" alt="Figure 2.1b" className="border rounded" />
+              <Image src="/screenshots/Figure_2.1b.png" alt="Figure 2.1b" width={800} height={400} className="border rounded" />
             </div>
 
             <p className="mb-4 text-gray-900">
@@ -90,7 +89,7 @@ export default function Guide() {
 
             <div className="bg-gray-50 p-4 rounded-lg mb-6">
               <p className="font-semibold mb-2 text-gray-900"><strong>Figure 1c</strong>: Game menu</p>
-              <img src="/screenshots/Figure_2.1c.png" alt="Figure 2.1c" className="border rounded" />
+              <Image src="/screenshots/Figure_2.1c.png" alt="Figure 2.1c" width={800} height={400} className="border rounded" />
             </div>
 
             <p className="mb-8 text-gray-900">
@@ -112,7 +111,7 @@ export default function Guide() {
 
             <div className="bg-gray-50 p-4 rounded-lg mb-6">
               <p className="font-semibold mb-2 text-gray-900"><strong>Figure 1.1a</strong>: Tab hierarchy</p>
-              <img src="/screenshots/Figure_2.1.1a.png" alt="Figure 2.1.1a" className="border rounded" />
+              <Image src="/screenshots/Figure_2.1.1a.png" alt="Figure 2.1.1a" width={800} height={400} className="border rounded" />
             </div>
 
             <p className="mb-8 text-gray-900">
@@ -132,11 +131,16 @@ export default function Guide() {
             <h3 id="adding-databases" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">2.1 Adding Databases</h3>
             
             <p className="mb-8 text-gray-900">
-              The user can add a new database by navigating to the main window of the program and clicking on "Add Database", 
-              selecting a <code>.PGN</code> file from the user's file system.<br />
+              The user can add a new database by navigating to the main window of the program and clicking on &quot;Add Database&quot;, 
+              selecting a <code>.PGN</code> file from the user&apos;s file system.<br />
               (See <strong>Figure 1a</strong>)
             </p>
 
+            <p className="mb-8 text-gray-900">
+              The user can add a new database by navigating to the main window of the program and clicking on &quot;Add Database&quot;, 
+              selecting a <code>.PGN</code> file from the user&apos;s file system.<br />
+              (See <strong>Figure 1a</strong>)
+            </p>
             <h3 id="game-preview" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">2.2 Game Preview</h3>
             
             <p className="mb-8 text-gray-900">
@@ -155,19 +159,19 @@ export default function Guide() {
 
             <div className="bg-gray-50 p-4 rounded-lg mb-8">
               <p className="font-semibold mb-2 text-gray-900"><strong>Figure 2.3a</strong>: Sorting by column headers</p>
-              <img src="/screenshots/Figure_2.2.3a.png" alt="Figure 2.2.3a" className="border rounded" />
+              <Image src="/screenshots/Figure_2.2.3a.png" alt="Figure 2.2.3a" width={800} height={400} className="border rounded" />
             </div>
 
             <h3 id="filtering-games" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">2.4 Filtering Games</h3>
             
             <p className="mb-4 text-gray-900">
-              The user may click on the "Filter" button which will open a dialogue with filtering options. Once applied, 
+              The user may click on the &quot;Filter&quot; button which will open a dialogue with filtering options. Once applied, 
               only games that match the selected criteria will be displayed in the list.
             </p>
 
             <div className="bg-gray-50 p-4 rounded-lg mb-8">
               <p className="font-semibold mb-2 text-gray-900"><strong>Figure 2.4a</strong>: Filter dialogue with game information</p>
-              <img src="/screenshots/Figure_2.2.4a.png" alt="Figure 2.2.4a" className="border rounded" />
+              <Image src="/screenshots/Figure_2.2.4a.png" alt="Figure 2.2.4a" width={800} height={400} className="border rounded" />
             </div>
 
             <hr className="my-12 border-gray-300" />
@@ -210,7 +214,7 @@ export default function Guide() {
 
             <div className="bg-gray-50 p-4 rounded-lg mb-8">
               <p className="font-semibold mb-2 text-gray-900"><strong>Figure 3.3a</strong>: Variation dialogue with move selection</p>
-              <img src="/screenshots/Figure_2.3.3a.png" alt="Figure 2.3.3a" className="border rounded" />
+              <Image src="/screenshots/Figure_2.3.3a.png" alt="Figure 2.3.3a" width={800} height={400} className="border rounded" />
             </div>
 
             <h3 id="deleting-moves" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">3.4 Deleting Moves and Variations</h3>
@@ -229,7 +233,7 @@ export default function Guide() {
 
             <div className="bg-gray-50 p-4 rounded-lg mb-8">
               <p className="font-semibold mb-2 text-gray-900"><strong>Figure 3.5a</strong>: Move annotation menu</p>
-              <img src="/screenshots/Figure_2.3.5a.png" alt="Figure 2.3.5a" className="border rounded" />
+              <Image src="/screenshots/Figure_2.3.5a.png" alt="Figure 2.3.5a" width={800} height={400} className="border rounded" />
             </div>
 
             <h3 id="game-review" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">3.6 Game Review Tool</h3>
@@ -245,7 +249,7 @@ export default function Guide() {
 
             <div className="bg-gray-50 p-4 rounded-lg mb-8">
               <p className="font-semibold mb-2 text-gray-900"><strong>Figure 3.6a</strong>: Game review tool</p>
-              <img src="/screenshots/Figure_2.3.6a.png" alt="Figure 2.3.6a" className="border rounded" />
+              <Image src="/screenshots/Figure_2.3.6a.png" alt="Figure 2.3.6a" width={800} height={400} className="border rounded" />
             </div>
 
             <h3 id="engine-analysis" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">3.7 Engine Analysis</h3>
@@ -263,7 +267,7 @@ export default function Guide() {
 
             <div className="bg-gray-50 p-4 rounded-lg mb-8">
               <p className="font-semibold mb-2 text-gray-900"><strong>Figure 3.7a</strong>: Engine panel with evaluation and move suggestion</p>
-              <img src="/screenshots/Figure_2.3.7a.png" alt="Figure 2.3.7a" className="border rounded" />
+              <Image src="/screenshots/Figure_2.3.7a.png" alt="Figure 2.3.7a" width={800} height={400} className="border rounded" />
             </div>
 
             <h3 id="opening-explorer" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">3.8 Opening Explorer Tool</h3>
@@ -276,7 +280,7 @@ export default function Guide() {
 
             <div className="bg-gray-50 p-4 rounded-lg mb-8">
               <p className="font-semibold mb-2 text-gray-900"><strong>Figure 3.8a</strong>: Opening explorer tool</p>
-              <img src="/screenshots/Figure_2.3.8a.png" alt="Figure 2.3.8a" className="border rounded" />
+              <Image src="/screenshots/Figure_2.3.8a.png" alt="Figure_2.3.8a" width={800} height={400} className="border rounded" />
             </div>
           </div>
         </div>
