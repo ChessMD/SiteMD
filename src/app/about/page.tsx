@@ -14,38 +14,51 @@ export default function About() {
             <h2 className="text-5xl md:text-7xl font-black text-mint-cream text-center mb-16 drop-shadow-lg">
               About
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-4xl mx-auto">
               {/*about text area */}
-              <div className="bg-mint-cream/98 backdrop-blur-sm rounded-2xl p-12 border-2 border-viridian-600/50 shadow-2xl max-w-4xl mx-auto md:col-span-3">
-                <p className="text-xl font-medium text-coffee-600 mb-8 leading-relaxed">
-                  ChessMD was made cause chess software should be good and free.
+              <div className="bg-mint-cream/98 backdrop-blur-sm rounded-2xl p-12 border-2 border-viridian-600/50 shadow-2xl max-w-4xl mx-auto md:col-span-3 mb-12">
+                <h3 className="text-2xl font-bold text-coffee-600 mb-6">Our Goal</h3>
+                <p className="text-lg font-medium text-coffee-300 mb-8 leading-relaxed">
+                  We created ChessMD because good chess software should be free to use.
                 </p>
-                <p className="text-lg font-medium text-coffee-700 mb-8 leading-relaxed">
-                  The software is currently in development, and improving everyday!
+                <p className="text-lg font-medium text-coffee-300 mb-8 leading-relaxed">
+                  ChessMD is currently in development and is improving everyday!
                 </p>
-                <p className="text-lg font-medium text-coffee-700 leading-relaxed">
-                  Please report any issues to <a href="mailto:report@chessmd.org" className="text-coffee-500 font-bold hover:text-coffee-400 underline transition-colors">report@chessmd.org</a> &#40;this email doesnt work yet&#41;
+                <p className="text-lg font-medium text-coffee-300 leading-relaxed">
+                  Leave your suggestions, report any issues, or request for help at <a href="mailto:support@chessmd.org" className="text-coffee-500 font-bold hover:text-coffee-400 underline transition-colors">support@chessmd.org</a> 
                 </p>
               </div>
               {/* update log box*/}
-              <div className="bg-mint-cream/98 backdrop-blur-sm rounded-2xl p-12 border-2 border-viridian-600/50 shadow-2xl md:col-span-2">
+              <div className="bg-mint-cream/98 backdrop-blur-sm rounded-2xl p-12 border-2 border-viridian-600/50 shadow-2xl max-w-4xl mx-auto">
                 <h3 className="text-2xl font-bold text-coffee-600 mb-6">Update Log</h3>
-                <div className="text-coffee-700 text-m space-y-4">
-                  <strong>v1.0-alpha(2025-5-11)</strong>
+                <div className="text-coffee-400 text-m space-y-4">
+                  <strong>v1.0beta.2 (2025-8-10)</strong>
                   <ul className="list-disc pl-5">
-                    <li>The 1.0 alpha version.</li>
+                    <li>Introduced importing games from online databases: download any games from chess.com</li>
+                    <li>Improved game review significantly: new game summary table, visual improvements, and bug fixes</li>
+                    <li>Made several UI improvements to the tab system, database viewer, and main window</li>
+                    <li>Moved database saving into a worker thread</li>
+                    <li>Fixed several minor issues</li>                  
                   </ul>
-                  <strong>v1.0beta(2025-7-18)</strong>
+                  <strong>v1.0beta.1 (2025-7-21)</strong>
                   <ul className="list-disc pl-5">
-                    <li>The 1.0 beta version.</li>
+                    <li>Improved database functionality: create empty databases and add new games to existing databases</li>
+                    <li>Fixed minor bugs</li>                  
                   </ul>
-                  <strong>v1.0beta.1(2025-7-21)</strong>
+                  <strong>v1.0beta (2025-7-18)</strong>
                   <ul className="list-disc pl-5">
-                    <li>The 1.0 beta.1 version.</li>
+                    <li>Introduced game review: analyse and break down mistakes quickly through a visual evaluation graph</li>
+                    <li>Introduced opening explorer: upload any PGN database and find games that played the same position</li>
+                    <li>Introduced PGN database saving: annotations, new variations, and other changes can now be saved</li>
+                    <li>Improved engine analysis: preview and append moves from the engine's suggested lines</li>
+                    <li>Improved visuals and added some QoL features</li>
+                    <li>Included an installer for the program</li>
+                  </ul>
+                  <strong>v1.0-alpha (2025-5-11)</strong>
+                  <ul className="list-disc pl-5">
+	                  <li>The first version of ChessMD!</li>
                   </ul>
                 </div>
               </div> 
-            </div>
           </div>
         </section>
       </main>

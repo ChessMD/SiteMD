@@ -14,7 +14,7 @@ export default function Download() {
           <h2 className="text-5xl md:text-7xl font-black text-mint-cream mb-6 drop-shadow-lg flex flex-col items-center">
             Download
             <span className="text-lg md:text-2xl font-semibold text-cambridge-blue-200 mt-2">
-              Version: <span className="font-mono text-coffee-400">v1.0-beta.1</span>
+              Version: <span className="font-mono text-coffee-400">v1.0-beta.2</span>
             </span>
           </h2>
           <p className="text-xl font-medium text-cambridge-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -33,7 +33,7 @@ export default function Download() {
                 <li>• Local engine</li>
                 <li>• Local database access</li>
               </ul>
-              <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta.1/setup.exe" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transition-colors w-full shadow-md text-lg">
+              <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta.2/setup.exe" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transition-colors w-full shadow-md text-lg">
                 Download (200 MB)
               </DownloadButton>
               
@@ -41,7 +41,7 @@ export default function Download() {
                 <h4 className="text-coffee-600 font-bold mb-2 text-base">Alternative Downloads</h4>
                 <ul className="text-coffee-700 text-sm space-y-2">
                   <li>
-                    <a href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta.1/ChessMD_portable.zip" className="underline hover:text-coffee-500 transition-colors">
+                    <a href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta.2/ChessMD_portable.zip" className="underline hover:text-coffee-500 transition-colors">
                       Portable ZIP 
                     </a>
                   </li>
