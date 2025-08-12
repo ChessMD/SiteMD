@@ -49,7 +49,7 @@ export default function About() {
                     <li>Introduced game review: analyse and break down mistakes quickly through a visual evaluation graph</li>
                     <li>Introduced opening explorer: upload any PGN database and find games that played the same position</li>
                     <li>Introduced PGN database saving: annotations, new variations, and other changes can now be saved</li>
-                    <li>Improved engine analysis: preview and append moves from the engine's suggested lines</li>
+                    <li>Improved engine analysis: preview and append moves from the engine&apos;s suggested lines</li>
                     <li>Improved visuals and added some QoL features</li>
                     <li>Included an installer for the program</li>
                   </ul>
