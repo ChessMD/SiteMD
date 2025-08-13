@@ -31,7 +31,7 @@ export default function About() {
               <div className="bg-mint-cream/98 backdrop-blur-sm rounded-2xl p-12 border-2 border-viridian-600/50 shadow-2xl max-w-4xl mx-auto">
                 <h3 className="text-2xl font-bold text-coffee-600 mb-6">Update Log</h3>
                 <div className="text-coffee-400 text-m space-y-4">
-                  <strong>v1.0beta.2 (2025-8-10)</strong>
+                  <strong>v1.0-beta.2 (2025-8-10)</strong>
                   <ul className="list-disc pl-5">
                     <li>Introduced importing games from online databases: download any games from chess.com</li>
                     <li>Improved game review significantly: new game summary table, visual improvements, and bug fixes</li>
@@ -39,12 +39,12 @@ export default function About() {
                     <li>Moved database saving into a worker thread</li>
                     <li>Fixed several minor issues</li>                  
                   </ul>
-                  <strong>v1.0beta.1 (2025-7-21)</strong>
+                  <strong>v1.0-beta.1 (2025-7-21)</strong>
                   <ul className="list-disc pl-5">
                     <li>Improved database functionality: create empty databases and add new games to existing databases</li>
                     <li>Fixed minor bugs</li>                  
                   </ul>
-                  <strong>v1.0beta (2025-7-18)</strong>
+                  <strong>v1.0-beta (2025-7-18)</strong>
                   <ul className="list-disc pl-5">
                     <li>Introduced game review: analyse and break down mistakes quickly through a visual evaluation graph</li>
                     <li>Introduced opening explorer: upload any PGN database and find games that played the same position</li>
