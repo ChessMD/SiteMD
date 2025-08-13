@@ -14,7 +14,7 @@ export default function Download() {
           <h2 className="text-5xl md:text-7xl font-black text-mint-cream mb-6 drop-shadow-lg flex flex-col items-center">
             Download
             <span className="text-lg md:text-2xl font-semibold text-white-200 mt-2">
-              Version: <span className="font-mono text-coffee-800">v1.0-beta.2</span>
+              Version: <span className="font-mono text-mint-cream-400">v1.0-beta.2</span>
             </span>
           </h2>
           <p className="text-xl font-medium text-cambridge-blue-600 mb-12 max-w-3xl mx-auto leading-relaxed">

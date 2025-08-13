@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import DownloadButton from "@/components/DownloadButton";
 import Image from "next/image";
+import Link from "next/link";
 
 import BackgroundPattern from "@/components/BackgroundPattern";
 
@@ -14,21 +15,21 @@ export default function Home() {
       <main className="container mx-auto px-6 relative z-10">
         {/*the main big text area */}
         <section className="text-center py-20">
-          <h2 className="text-5xl md:text-7xl font-black text-mint-cream mb-6 drop-shadow-lg">
-            Master Chess with <span className="bg-coffee-800 bg-clip-text text-transparent"> ChessMD</span>
+          <h2 className="text-5xl md:text-7xl font-black text-mint-cream mb-4 drop-shadow-lg">
+            Master Chess with <span className="bg-coffee-800 bg-clip-text text-transparent"> ChessMD</span>,
           </h2>
+          <p className="text-5xl mb-6 font-black text-mint-cream drop-shadow-lg"> 
+            the ultimate chess training software.  
+          </p>
+
           <p className="text-2xl font-medium text-cambridge-blue-600 mb-12 max-w-6xl mx-auto leading-relaxed">
-            The ultimate chess learning platform. 
-            Improve your game with database analysis, built-in game review, and game study tools.
+            Improve your game with unlimited game review, interactive engine anlaysis, and several other state-of-the-art training utilities developed by chess masters.
           </p>
           {/* use download button component cuz client side rendering */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta/setup.exe" className="bg-coffee-600 text-mint-cream font-bold px-8 py-4 rounded-lg text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 hover:bg-coffee-700 shadow-lg">
+            <Link href="/download" className="bg-coffee-600 text-mint-cream font-bold px-8 py-4 rounded-lg text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 hover:bg-coffee-700 shadow-lg">
               Download for Windows
-            </DownloadButton>
-            {/* <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta/setup.exe" className="border-3 border-mint-cream bg-transparent text-mint-cream font-bold px-8 py-4 rounded-lg text-lg hover:bg-mint-cream hover:text-viridian-600 transition-all duration-200 shadow-lg">
-              Download for Mac
-            </DownloadButton> */}
+            </Link>
           </div>
         </section>
 
@@ -104,10 +105,10 @@ export default function Home() {
           {/* screenshot area*/}
           <div className="mt-16 text-center">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mx-auto max-w-6xl border border-white/20">
-              <div className="bg-gray-200 rounded-lg aspect-video flex items-center justify-center mb-4 overflow-hidden">
+              <div className="bg-gray-200 rounded-lg aspect-video flex items-center justify-center mb-6 overflow-hidden">
                 <Image src="/screenshots/Figure_2.1c.png" alt="ChessMD game analysis screen" width={1920} height={1080} className="w-full h-full object-contain rounded-lg" priority/>
               </div>
-              <p className="text-cambridge-blue-800 text-2xl font-medium">
+              <p className="text-cambridge-blue-800 text-2xl font-bold">
                 ChessMD game analysis screen
               </p>
             </div>
