@@ -47,7 +47,7 @@ export default function Download() {
                   </li>
                   <li>
                     <a href="https://github.com/ChessMD/ChessMD/releases" className="underline hover:text-coffee-500 transition-colors">
-                      All releases & older versions
+                      All releases &amp; older versions
                     </a>
                   </li>
                 </ul>

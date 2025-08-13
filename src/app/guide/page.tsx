@@ -1,12 +1,11 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-
 import BackgroundPattern from "@/components/BackgroundPattern";
 import Image from "next/image";
 
 export default function Guide() {
   return (
-    <div className="min-h-screen bg-viridian-400 relative">
+    <div className="min-h-screen bg-viridian-400 relative scroll-smooth">
       <BackgroundPattern />
       <Navigation currentPage="guide" />
 
@@ -42,6 +41,7 @@ export default function Guide() {
                   <div><a href="#game-preview" className="text-gray-700 hover:text-viridian-400 transition-colors">2.2 Game Preview</a></div>
                   <div><a href="#sorting-games" className="text-gray-700 hover:text-viridian-400 transition-colors">2.3 Sorting Games</a></div>
                   <div><a href="#filtering-games" className="text-gray-700 hover:text-viridian-400 transition-colors">2.4 Filtering Games</a></div>
+                  <div><a href="#customizing-headers" className="text-gray-700 hover:text-viridian-400 transition-colors">2.5 Customizing Headers</a></div>
                 </div>
                 
                 <div className="font-semibold text-lg mb-3 mt-4">
@@ -135,6 +135,7 @@ export default function Guide() {
               selecting a <code>.PGN</code> file from the user&apos;s file system.<br />
               (See <strong>Figure 1a</strong>)
             </p>
+
             <h3 id="game-preview" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">2.2 Game Preview</h3>
             
             <p className="mb-8 text-gray-900">
@@ -166,6 +167,17 @@ export default function Guide() {
             <div className="bg-gray-50 p-4 rounded-lg mb-8">
               <p className="font-semibold mb-2 text-gray-900"><strong>Figure 2.4a</strong>: Filter dialogue with game information</p>
               <Image src="/screenshots/Figure_2.2.4a.png" alt="Figure 2.2.4a" width={800} height={400} className="border rounded" />
+            </div>
+
+            <h3 id="customizing-headers" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">2.5 Customizing Headers</h3>
+            
+            <p className="mb-4 text-gray-900">
+              The user may right-click on any header to access the header customization menu. The user may then add, remove, and reorder the shown headers.
+            </p>
+
+            <div className="bg-gray-50 p-4 rounded-lg mb-8">
+              <p className="font-semibold mb-2 text-gray-900"><strong>Figure 2.5a</strong>: Custom headers dialogue</p>
+              <Image src="/screenshots/Figure_2.2.5a.png" alt="Figure 2.2.5a" width={800} height={400} className="border rounded" />
             </div>
 
             <hr className="my-12 border-gray-300" />
