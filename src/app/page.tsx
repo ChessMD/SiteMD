@@ -15,20 +15,20 @@ export default function Home() {
         {/*the main big text area */}
         <section className="text-center py-20">
           <h2 className="text-5xl md:text-7xl font-black text-mint-cream mb-6 drop-shadow-lg">
-            Master Chess with <span className="bg-coffee-500 bg-clip-text text-transparent"> ChessMD</span>
+            Master Chess with <span className="bg-coffee-800 bg-clip-text text-transparent"> ChessMD</span>
           </h2>
-          <p className="text-xl font-medium text-cambridge-blue-100 mb-12 max-w-6xl mx-auto leading-relaxed">
-            The ultimate chess learning platform. Improve your game with database
-            analysis, built-in game review, and game study tools.
+          <p className="text-2xl font-medium text-cambridge-blue-600 mb-12 max-w-6xl mx-auto leading-relaxed">
+            The ultimate chess learning platform. 
+            Improve your game with database analysis, built-in game review, and game study tools.
           </p>
           {/* use download button component cuz client side rendering */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta/setup.exe" className="bg-coffee-600 text-mint-cream font-bold px-8 py-4 rounded-lg text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 hover:bg-coffee-700 shadow-lg">
               Download for Windows
             </DownloadButton>
-            <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta/setup.exe" className="border-3 border-mint-cream bg-transparent text-mint-cream font-bold px-8 py-4 rounded-lg text-lg hover:bg-mint-cream hover:text-viridian-600 transition-all duration-200 shadow-lg">
+            {/* <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta/setup.exe" className="border-3 border-mint-cream bg-transparent text-mint-cream font-bold px-8 py-4 rounded-lg text-lg hover:bg-mint-cream hover:text-viridian-600 transition-all duration-200 shadow-lg">
               Download for Mac
-            </DownloadButton>
+            </DownloadButton> */}
           </div>
         </section>
 
@@ -46,7 +46,7 @@ export default function Home() {
               <h4 className="text-xl font-bold text-mint-cream mb-3">
                 Database Management
               </h4>
-              <p className="text-cambridge-blue-100 leading-relaxed">
+              <p className="text-cambridge-blue-700 leading-relaxed">
                 Browse and manage multiple chess databases with ease. Import PGN
                 files and organize your game collections.
               </p>
@@ -62,7 +62,7 @@ export default function Home() {
               <h4 className="text-xl font-bold text-mint-cream mb-3">
                 Intuitive Navigation
               </h4>
-              <p className="text-cambridge-blue-100 leading-relaxed">
+              <p className="text-cambridge-blue-700 leading-relaxed">
                 Work with multiple games simultaneously using tabs. Switch between
                 databases and study organized!
               </p>
@@ -78,7 +78,7 @@ export default function Home() {
               <h4 className="text-xl font-bold text-mint-cream mb-3">
                 Game Review
               </h4>
-              <p className="text-cambridge-blue-100 leading-relaxed">
+              <p className="text-cambridge-blue-700 leading-relaxed">
                 Analyze your games with detailed review tools. Add annotations,
                 comments, and identify brilliant ideas!
               </p>
@@ -94,7 +94,7 @@ export default function Home() {
               <h4 className="text-xl font-bold text-mint-cream mb-3">
                 Engine Analysis
               </h4>
-              <p className="text-cambridge-blue-100 leading-relaxed">
+              <p className="text-cambridge-blue-700 leading-relaxed">
                 Real-time position analysis with UCI engine support. Get instant
                 evaluations and best move suggestions.
               </p>
@@ -107,7 +107,7 @@ export default function Home() {
               <div className="bg-gray-200 rounded-lg aspect-video flex items-center justify-center mb-4 overflow-hidden">
                 <Image src="/screenshots/Figure_2.1c.png" alt="ChessMD game analysis screen" width={1920} height={1080} className="w-full h-full object-contain rounded-lg" priority/>
               </div>
-              <p className="text-cambridge-blue-100 text-lg font-medium">
+              <p className="text-cambridge-blue-800 text-2xl font-medium">
                 ChessMD game analysis screen
               </p>
             </div>

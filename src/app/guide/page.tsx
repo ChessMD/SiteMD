@@ -19,7 +19,7 @@ export default function Guide() {
             <h1 className="text-4xl font-bold text-viridian-400 mb-8">User Guide</h1>
             
             <p className="text-lg text-gray-900 mb-8">
-              The user guide will demonstrate how the software can be used.
+              Welcome to the user guide! All the information needed to use the software can be found here.
             </p>
 
             {/* tableof contents */}
