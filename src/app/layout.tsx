@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "ChessMD",
+  icons: "/favicon.ico",
   description: "The modern way to study chess",
 };
 
