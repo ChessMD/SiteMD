@@ -31,6 +31,10 @@ export default function About() {
               <div className="bg-mint-cream/98 backdrop-blur-sm rounded-2xl p-12 border-2 border-viridian-600/50 shadow-2xl max-w-4xl mx-auto">
                 <h3 className="text-2xl font-bold text-coffee-600 mb-6">Update Log</h3>
                 <div className="text-coffee-400 text-m space-y-4">
+                  <strong>v1.0-beta.3 (2025-8-16)</strong>
+                  <ul className="list-disc pl-5">
+                    <li>Patched several critical parsing-related issues</li>              
+                  </ul>
                   <strong>v1.0-beta.2 (2025-8-10)</strong>
                   <ul className="list-disc pl-5">
                     <li>Introduced importing games from online databases: download any games from chess.com</li>

@@ -14,7 +14,7 @@ export default function Download() {
           <h2 className="text-5xl md:text-7xl font-black text-mint-cream mb-6 drop-shadow-lg flex flex-col items-center">
             Download
             <span className="text-lg md:text-2xl font-semibold text-white-200 mt-2">
-              Version: <span className="font-mono text-mint-cream-400">v1.0-beta.2</span>
+              Version: <span className="font-mono text-mint-cream-400">v1.0-beta.3</span>
             </span>
           </h2>
           <p className="text-xl font-medium text-cambridge-blue-600 mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -29,11 +29,12 @@ export default function Download() {
               <h3 className="text-3xl font-black text-coffee-400 mb-4">Windows</h3>
               <p className="text-coffee-500 text-sm mb-6">Windows 10/11 (64-bit)</p>
               <div className="flex flex-col sm:flex-row gap-4 w-full">
-                <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta.2/setup.exe" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors w-full shadow-md text-lg">
+                <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta.3/setup.exe" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors w-full shadow-md text-lg">
                   Installer
                 </DownloadButton>
-                <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta.2/ChessMD_portable.zip" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200  transition-colors w-full shadow-md text-lg">
+                <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta.3/ChessMD_portable.zip" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200  transition-colors w-full shadow-md text-lg">
                   Portable
+                  <span className="block  text-sm font-medium leading-none"> (Recommended) </span>
                 </DownloadButton>
               </div>
               <div className="mt-6">
