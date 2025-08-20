@@ -30,9 +30,9 @@ export default function Home() {
             <Link href="/download" className="flex-1 bg-coffee-600 text-mint-cream font-bold px-8 py-4 rounded-lg text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 hover:bg-coffee-700 shadow-lg">
               Download ChessMD
             </Link>
-            <Link href="/download" className="flex-1 bg-emerald-200 text-black font-bold px-8 py-4 rounded-lg text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 hover:bg-emerald-100 shadow-lg">
+            <a href="https://github.com/ChessMD/ChessMD" target="_blank" rel="noopener noreferrer" className="flex-1 bg-emerald-200 text-black font-bold px-8 py-4 rounded-lg text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 hover:bg-emerald-100 shadow-lg">
               View Our Github 
-            </Link>
+            </a>
           </div>
         </section>
 
