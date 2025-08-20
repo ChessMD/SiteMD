@@ -26,9 +26,12 @@ export default function Home() {
             Improve your game with unlimited game review, interactive engine anlaysis, and several other state-of-the-art training utilities developed by chess masters.
           </p>
           {/* use download button component cuz client side rendering */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/download" className="bg-coffee-600 text-mint-cream font-bold px-8 py-4 rounded-lg text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 hover:bg-coffee-700 shadow-lg">
-              Download for Windows
+          <div className="flex justify-center gap-6 w-lg mx-auto">
+            <Link href="/download" className="flex-1 bg-coffee-600 text-mint-cream font-bold px-8 py-4 rounded-lg text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 hover:bg-coffee-700 shadow-lg">
+              Download ChessMD
+            </Link>
+            <Link href="/download" className="flex-1 bg-emerald-200 text-black font-bold px-8 py-4 rounded-lg text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 hover:bg-emerald-100 shadow-lg">
+              View Our Github 
             </Link>
           </div>
         </section>
@@ -47,7 +50,7 @@ export default function Home() {
               <h4 className="text-xl font-bold text-mint-cream mb-3">
                 Database Management
               </h4>
-              <p className="text-cambridge-blue-700 leading-relaxed">
+              <p className="text-emerald-100 leading-relaxed">
                 Browse and manage multiple chess databases with ease. Import PGN
                 files and organize your game collections.
               </p>
@@ -63,7 +66,7 @@ export default function Home() {
               <h4 className="text-xl font-bold text-mint-cream mb-3">
                 Intuitive Navigation
               </h4>
-              <p className="text-cambridge-blue-700 leading-relaxed">
+              <p className="text-emerald-100 leading-relaxed">
                 Work with multiple games simultaneously using tabs. Switch between
                 databases and study organized!
               </p>
@@ -79,7 +82,7 @@ export default function Home() {
               <h4 className="text-xl font-bold text-mint-cream mb-3">
                 Game Review
               </h4>
-              <p className="text-cambridge-blue-700 leading-relaxed">
+              <p className="text-emerald-100 leading-relaxed">
                 Analyze your games with detailed review tools. Add annotations,
                 comments, and identify brilliant ideas!
               </p>
@@ -95,7 +98,7 @@ export default function Home() {
               <h4 className="text-xl font-bold text-mint-cream mb-3">
                 Engine Analysis
               </h4>
-              <p className="text-cambridge-blue-700 leading-relaxed">
+              <p className="text-emerald-100 leading-relaxed">
                 Real-time position analysis with UCI engine support. Get instant
                 evaluations and best move suggestions.
               </p>
@@ -108,7 +111,7 @@ export default function Home() {
               <div className="bg-gray-200 rounded-lg aspect-video flex items-center justify-center mb-6 overflow-hidden">
                 <Image src="/screenshots/Figure_2.1c.png" alt="ChessMD game analysis screen" width={1920} height={1080} className="w-full h-full object-contain rounded-lg" priority/>
               </div>
-              <p className="text-cambridge-blue-800 text-2xl font-bold">
+              <p className="text-emerald-100 text-2xl font-bold">
                 ChessMD game analysis screen
               </p>
             </div>
