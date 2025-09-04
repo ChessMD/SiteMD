@@ -33,7 +33,8 @@ export default function About() {
                 <div className="text-coffee-400 text-m space-y-4">
                   <strong>v1.0-beta.3 (2025-8-16)</strong>
                   <ul className="list-disc pl-5">
-                    <li>Patched several critical parsing-related issues</li>              
+                    <li>Patched several critical parsing-related issues</li>
+                    <li>Released ChessMD on Mac and Linux</li>              
                   </ul>
                   <strong>v1.0-beta.2 (2025-8-10)</strong>
                   <ul className="list-disc pl-5">
