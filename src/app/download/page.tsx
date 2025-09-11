@@ -14,7 +14,7 @@ export default function Download() {
           <h2 className="text-5xl md:text-7xl font-black text-mint-cream mb-0 drop-shadow-lg flex flex-col items-center">
             Download
             <span className="text-lg md:text-2xl font-semibold text-white-200 mt-2">
-              Version: <span className="font-mono text-mint-cream-400">v1.0-beta.3</span>
+              Version: <span className="font-mono text-mint-cream-400">v1.0</span>
             </span>
           </h2>
           <div className="mt-6 text-center mb-8">
@@ -37,7 +37,7 @@ export default function Download() {
                   Installer
                   <span className="block  text-sm font-medium leading-none"> (Recommended) </span>
                 </DownloadButton>
-                <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta.3/ChessMD_portable.zip" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200  transition-colors w-full shadow-md text-lg">
+                <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0/ChessMD_portable.zip" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200  transition-colors w-full shadow-md text-lg">
                   Portable
                 </DownloadButton>
               </div>
@@ -48,7 +48,7 @@ export default function Download() {
               </div>
               <h3 className="text-3xl font-black text-coffee-400 mb-4">macOS</h3>
               <p className="text-coffee-600 font-medium text-sm mb-6">macOS 12+ (Intel/Apple Silicon)</p>
-              <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta.3/ChessMD.dmg" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors w-full shadow-md text-lg">
+              <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0/ChessMD.dmg" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors w-full shadow-md text-lg">
                 Download 
               </DownloadButton>
             </div>
@@ -58,7 +58,7 @@ export default function Download() {
               </div>
               <h3 className="text-3xl font-black text-coffee-400 mb-4">Linux</h3>
               <p className="text-coffee-600 font-medium text-sm mb-6">Most modern distributions</p>
-              <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0-beta.3/ChessMD.tar.gz" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors w-full shadow-md text-lg">
+              <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0/ChessMD.tar.gz" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors w-full shadow-md text-lg">
                 Download 
               </DownloadButton>
             </div>
