@@ -48,7 +48,7 @@ export default function Download() {
               </div>
               <h3 className="text-3xl font-black text-coffee-400 mb-4">macOS</h3>
               <p className="text-coffee-600 font-medium text-sm mb-6">macOS 12+ (Intel/Apple Silicon)</p>
-              <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0/ChessMD.dmg" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors w-full shadow-md text-lg">
+              <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0/ChessMD.pkg" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors w-full shadow-md text-lg">
                 Download 
               </DownloadButton>
             </div>
