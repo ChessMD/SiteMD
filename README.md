@@ -1,6 +1,6 @@
 # SiteMD (Website for ChessMD)
 
-This is the website that will eventually be hosted at [chessmd.org](chessmd.org), for ChessMD, a chess learning and analysis platform project.
+This is the website that will eventually be hosted at [chessmd.org](https://chessmd.org/), for ChessMD, a chess learning and analysis platform project.
 
 ![Home Page](public/screenshots/homepage.png)
 
@@ -21,7 +21,7 @@ This is the website that will eventually be hosted at [chessmd.org](chessmd.org)
 
 ## Link
 
-[Link to deployment](https://site-l0a3sunqv-michaelzjqus-projects.vercel.app/)
+[Link to deployment](https://chessmd.org/)
 
 ## Running locally
 
