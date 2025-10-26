@@ -32,12 +32,12 @@ export default function Download() {
               </div>
               <h3 className="text-3xl font-black text-coffee-400 mb-4">Windows</h3>
               <p className="text-coffee-600 text-sm mb-6">Windows 10/11 (64-bit)</p>
-              <div className="flex flex-col sm:flex-row gap-4 w-full">
-                <DownloadButton href="https://apps.microsoft.com/detail/XPFFTX69WQS18M?hl=en-US&gl=US&ocid=pdpshare" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors w-full shadow-md text-lg">
+              <div className="flex flex-wrap gap-4 w-full justify-center">
+                <DownloadButton href="https://apps.microsoft.com/detail/XPFFTX69WQS18M?hl=en-US&gl=US&ocid=pdpshare" className="flex-grow min-w-[11rem] max-w-[28rem] bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors shadow-md text-lg text-center">
                   Installer
                   <span className="block  text-sm font-medium leading-none"> (Recommended) </span>
                 </DownloadButton>
-                <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0/ChessMD_portable.zip" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200  transition-colors w-full shadow-md text-lg">
+                <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0/ChessMD_portable.zip" className="flex-grow min-w-[11rem] max-w-[28rem] bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200  transition-colors shadow-md text-lg text-center">
                   Portable
                 </DownloadButton>
               </div>
@@ -57,10 +57,15 @@ export default function Download() {
                 <span className="text-mint-cream font-bold text-2xl">🐧</span>
               </div>
               <h3 className="text-3xl font-black text-coffee-400 mb-4">Linux</h3>
-              <p className="text-coffee-600 font-medium text-sm mb-6">Most modern distributions</p>
-              <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0/ChessMD.tar.gz" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors w-full shadow-md text-lg">
-                Download 
-              </DownloadButton>
+              <p className="text-coffee-600 font-medium text-sm mb-6">Most modern distributions</p>              
+              <div className="flex flex-wrap gap-4 w-full justify-center">
+                <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0/ChessMD.tar.gz" className="flex-grow min-w-[11rem] max-w-[28rem] bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors shadow-md text-lg text-center">
+                  x86
+                </DownloadButton>
+                <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.0/ChessMD-aarch64.tar.gz" className="flex-grow min-w-[11rem] max-w-[28rem] bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200  transition-colors shadow-md text-lg text-center">
+                  ARM64
+                </DownloadButton>
+              </div>
             </div>
           </div>
         </section>
