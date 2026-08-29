@@ -31,6 +31,12 @@ export default function About() {
               <div className="bg-mint-cream/98 backdrop-blur-sm rounded-2xl p-12 border-2 border-viridian-600/50 shadow-2xl max-w-4xl mx-auto">
                 <h3 className="text-2xl font-bold text-coffee-600 mb-6">Update Log</h3>
                 <div className="text-coffee-400 text-m space-y-4">
+                  <strong>v1.1 (2026-8-28)</strong>
+                  <ul className="list-disc pl-5">
+                    <li>Added language support, with translations to 10 languages</li>
+                    <li>Fixed several UI bugs</li>
+                    <li>Improved UX for managing opening database settings</li>              
+                  </ul>
                   <strong>v1.0 (2025-9-10)</strong>
                   <ul className="list-disc pl-5">
                     <li>Introduced play against bots: play live chess games against bots, featuring customizable skill levels and time controls</li>
