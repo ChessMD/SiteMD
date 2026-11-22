@@ -34,7 +34,6 @@ const platforms = [
       {
         href: "https://apps.microsoft.com/detail/XPFFTX69WQS18M?hl=en-US&gl=US&ocid=pdpshare",
         label: "Installer",
-        note: "Recommended",
       },
       {
         href: "https://github.com/ChessMD/ChessMD/releases/download/v1.1/ChessMD_portable.zip",
@@ -125,11 +124,6 @@ export default function Download() {
                     </DownloadButton>
                   ))}
                 </div>
-                {platform.buttons.some((b) => b.note) && (
-                  <p className="mt-3 text-xs text-ink-muted">
-                    {platform.buttons.find((b) => b.note)?.label} is recommended.
-                  </p>
-                )}
               </div>
             </div>
           ))}
