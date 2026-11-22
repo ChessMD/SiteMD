@@ -1,21 +1,31 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    // rn just logo and 2025 thingy but divs setup to easily format like the stuff u always see in website footers
-    <footer className="border-t-2 border-cambridge-blue-600/60 mt-20 bg-cambridge-blue-900/80">
-      <div className="container mx-auto px-6 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center space-x-3 mb-4 md:mb-0">
-            <div className="w-6 h-6 bg-coffee-600 rounded flex items-center justify-center shadow-md">
-              <Image src="/logo.png" alt="ChessMD Logo" width={16} height={16} />
-            </div>
-            <span className="text-mint-cream font-black">ChessMD</span>
-          </div>
-          <div className="text-cambridge-blue-200 font-medium text-sm">
-            2026 ChessMD
-          </div>
+    <footer className="mt-24 border-t border-border-subtle">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
+        <Link href="/" className="flex items-center gap-2 text-ink transition-colors hover:text-accent">
+          <Image src="/logo.png" alt="ChessMD logo" width={20} height={20} className="rounded" />
+          <span className="text-sm font-semibold">ChessMD</span>
+        </Link>
+
+        <div className="flex items-center gap-5 text-sm text-ink-muted">
+          <Link href="/guide" className="transition-colors hover:text-ink">Guide</Link>
+          <Link href="/download" className="transition-colors hover:text-ink">Download</Link>
+          <a
+            href="https://github.com/ChessMD/ChessMD"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-ink"
+          >
+            GitHub
+          </a>
         </div>
+
+        <p className="text-sm text-ink-muted">© {year} ChessMD</p>
       </div>
     </footer>
   );
