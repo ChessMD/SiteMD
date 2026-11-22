@@ -1,295 +1,301 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import BackgroundPattern from "@/components/BackgroundPattern";
 import Image from "next/image";
+
+const toc = [
+  {
+    id: "overview",
+    label: "1. Overview",
+    children: [{ id: "tab-system", label: "1.1 Tab System" }],
+  },
+  {
+    id: "database-menu",
+    label: "2. Database Menu",
+    children: [
+      { id: "adding-databases", label: "2.1 Adding Databases" },
+      { id: "game-preview", label: "2.2 Game Preview" },
+      { id: "sorting-games", label: "2.3 Sorting Games" },
+      { id: "filtering-games", label: "2.4 Filtering Games" },
+      { id: "customizing-headers", label: "2.5 Customizing Headers" },
+    ],
+  },
+  {
+    id: "board-menu",
+    label: "3. Board Menu",
+    children: [
+      { id: "navigating-moves", label: "3.1 Navigating Moves" },
+      { id: "saving-edits", label: "3.2 Saving Edits" },
+      { id: "making-moves", label: "3.3 Making Moves and Variations" },
+      { id: "deleting-moves", label: "3.4 Deleting Moves and Variations" },
+      { id: "comments-annotations", label: "3.5 Adding Comments and Annotations" },
+      { id: "game-review", label: "3.6 Game Review Tool" },
+      { id: "engine-analysis", label: "3.7 Engine Analysis" },
+      { id: "opening-explorer", label: "3.8 Opening Explorer Tool" },
+    ],
+  },
+];
+
+function Figure({ src, caption }: { src: string; caption: string }) {
+  return (
+    <figure className="my-6">
+      <div className="overflow-hidden rounded-lg border border-border-subtle bg-surface-muted">
+        <Image src={src} alt={caption} width={800} height={400} className="w-full" />
+      </div>
+      <figcaption className="mt-2 text-sm text-ink-muted">{caption}</figcaption>
+    </figure>
+  );
+}
+
+const h2 = "font-display mt-14 mb-4 scroll-mt-24 text-2xl font-bold text-ink";
+const h3 = "font-display mt-10 mb-3 scroll-mt-24 text-lg font-bold text-ink";
+const p = "mb-4 leading-relaxed text-ink-muted";
+const code =
+  "rounded bg-surface-muted px-1.5 py-0.5 font-mono text-[0.85em] text-ink";
 
 export default function Guide() {
   return (
-    <div className="min-h-screen bg-viridian-400 relative scroll-smooth">
-      <BackgroundPattern />
+    <div className="min-h-screen">
       <Navigation currentPage="guide" />
 
-      <main className="container mx-auto px-6 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-black text-mint-cream text-center mb-16 drop-shadow-lg">
-            User Guide
-          </h1>
-          
-          <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-8 md:p-12 prose prose-lg max-w-none">
-            <h1 className="text-4xl font-bold text-viridian-400 mb-8">User Guide</h1>
-            
-            <p className="text-lg text-gray-900 mb-8">
-              Welcome to the user guide! All the information needed to use the software can be found here.
-            </p>
+      <main className="mx-auto max-w-3xl px-6 py-20">
+        <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+          User Guide
+        </h1>
+        <p className="mt-4 text-ink-muted">
+          Everything you need to use ChessMD, from the database library to the
+          engine and opening tools.
+        </p>
 
-            {/* tableof contents */}
-            <div className="bg-gray-100 p-6 rounded-lg mb-12 border-l-4 border-viridian-400">
-              <h2 className="text-2xl font-bold text-viridian-400 mb-4">Table of Contents</h2>
-              <div className="space-y-2 text-gray-900">
-                <div className="font-semibold text-lg mb-3">
-                  <a href="#overview" className="text-viridian-400 hover:text-viridian-500 transition-colors">1. Overview</a>
-                </div>
-                <div className="ml-4 space-y-1">
-                  <div><a href="#tab-system" className="text-gray-700 hover:text-viridian-400 transition-colors">1.1 Tab System</a></div>
-                </div>
-                
-                <div className="font-semibold text-lg mb-3 mt-4">
-                  <a href="#database-menu" className="text-viridian-400 hover:text-viridian-500 transition-colors">2. Database Menu</a>
-                </div>
-                <div className="ml-4 space-y-1">
-                  <div><a href="#adding-databases" className="text-gray-700 hover:text-viridian-400 transition-colors">2.1 Adding Databases</a></div>
-                  <div><a href="#game-preview" className="text-gray-700 hover:text-viridian-400 transition-colors">2.2 Game Preview</a></div>
-                  <div><a href="#sorting-games" className="text-gray-700 hover:text-viridian-400 transition-colors">2.3 Sorting Games</a></div>
-                  <div><a href="#filtering-games" className="text-gray-700 hover:text-viridian-400 transition-colors">2.4 Filtering Games</a></div>
-                  <div><a href="#customizing-headers" className="text-gray-700 hover:text-viridian-400 transition-colors">2.5 Customizing Headers</a></div>
-                </div>
-                
-                <div className="font-semibold text-lg mb-3 mt-4">
-                  <a href="#board-menu" className="text-viridian-400 hover:text-viridian-500 transition-colors">3. Board Menu</a>
-                </div>
-                <div className="ml-4 space-y-1">
-                  <div><a href="#navigating-moves" className="text-gray-700 hover:text-viridian-400 transition-colors">3.1 Navigating Moves</a></div>
-                  <div><a href="#saving-edits" className="text-gray-700 hover:text-viridian-400 transition-colors">3.2 Saving Edits</a></div>
-                  <div><a href="#making-moves" className="text-gray-700 hover:text-viridian-400 transition-colors">3.3 Making Moves and Variations</a></div>
-                  <div><a href="#deleting-moves" className="text-gray-700 hover:text-viridian-400 transition-colors">3.4 Deleting Moves and Variations</a></div>
-                  <div><a href="#comments-annotations" className="text-gray-700 hover:text-viridian-400 transition-colors">3.5 Adding Comments and Annotations</a></div>
-                  <div><a href="#game-review" className="text-gray-700 hover:text-viridian-400 transition-colors">3.6 Game Review Tool</a></div>
-                  <div><a href="#engine-analysis" className="text-gray-700 hover:text-viridian-400 transition-colors">3.7 Engine Analysis</a></div>
-                  <div><a href="#opening-explorer" className="text-gray-700 hover:text-viridian-400 transition-colors">3.8 Opening Explorer Tool</a></div>
-                </div>
-              </div>
-            </div>
+        {/* Table of contents */}
+        <nav
+          aria-label="Table of contents"
+          className="mt-10 rounded-xl border border-border-subtle bg-surface p-6"
+        >
+          <h2 className="font-display text-sm font-bold uppercase tracking-wide text-ink-muted">
+            Contents
+          </h2>
+          <ul className="mt-4 space-y-3">
+            {toc.map((section) => (
+              <li key={section.id}>
+                <a
+                  href={`#${section.id}`}
+                  className="font-medium text-ink transition-colors hover:text-accent"
+                >
+                  {section.label}
+                </a>
+                <ul className="mt-1.5 space-y-1 border-l border-border-subtle pl-4">
+                  {section.children.map((child) => (
+                    <li key={child.id}>
+                      <a
+                        href={`#${child.id}`}
+                        className="text-sm text-ink-muted transition-colors hover:text-accent"
+                      >
+                        {child.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-            <h2 id="overview" className="text-3xl font-bold text-viridian-400 mt-12 mb-6">1. Overview</h2>
-            
-            <p className="mb-4 text-gray-900">The following menu will appear when the program is run:</p>
-            
-            <div className="bg-gray-50 p-4 rounded-lg mb-6">
-              <p className="font-semibold mb-2 text-gray-900"><strong>Figure 1a</strong>: Main screen display</p>
-              <Image src="/screenshots/Figure_2.1a.png" alt="Figure 2.1a" width={800} height={400} className="border rounded" />
-            </div>
+        <article className="mt-12 text-[0.95rem]">
+          <h2 id="overview" className={h2}>
+            1. Overview
+          </h2>
+          <p className={p}>The following menu appears when the program is run:</p>
+          <Figure src="/screenshots/Figure_2.1a.png" caption="Figure 1a — Main screen display" />
+          <p className={p}>
+            This is the database library, the main menu of the software, which
+            holds a collection of chess databases, where each database is a list
+            of chess games. Double-clicking a database icon opens a menu that
+            displays the games in that database:
+          </p>
+          <Figure src="/screenshots/Figure_2.1b.png" caption="Figure 1b — Database menu" />
+          <p className={p}>
+            In the database menu, each row on the left is a chess game and each
+            column shows basic information about it. On the right is a preview of
+            the selected game, which you can navigate through the notation viewer
+            or the arrow keys. Double-clicking any row opens that game in a new
+            window:
+          </p>
+          <Figure src="/screenshots/Figure_2.1c.png" caption="Figure 1c — Game menu" />
+          <p className={p}>
+            In the game menu you&apos;re greeted by a chess board, a notation
+            viewer, and options to open the Engine, Opening Explorer, and Game
+            Review tools.
+          </p>
 
-            <p className="mb-4 text-gray-900">
-              This is the database library, the main menu of the software which consists of a collection of chess databases, 
-              where each database is a list of chess games. When the user double-clicks a database icon, a menu will appear 
-              displaying the games in the database:
-            </p>
+          <h3 id="tab-system" className={h3}>
+            1.1 Tab System
+          </h3>
+          <p className={p}>
+            You may want several chess games and databases open at once. The tab
+            system handles this: multiple menus can be opened within each window.
+          </p>
+          <p className={p}>
+            The main window holds tabs that display chess databases. Each database
+            is associated with a window whose tabs display each chess game.
+          </p>
+          <Figure src="/screenshots/Figure_2.1.1a.png" caption="Figure 1.1a — Tab hierarchy" />
+          <p className={p}>
+            The tab hierarchy provides the framework for organising the
+            program&apos;s various windows.
+          </p>
 
-            <div className="bg-gray-50 p-4 rounded-lg mb-6">
-              <p className="font-semibold mb-2 text-gray-900"><strong>Figure 1b</strong>: Database menu</p>
-              <Image src="/screenshots/Figure_2.1b.png" alt="Figure 2.1b" width={800} height={400} className="border rounded" />
-            </div>
+          <h2 id="database-menu" className={h2}>
+            2. Database Menu
+          </h2>
+          <p className={p}>
+            The database menu displays the list of chess games in a database. It
+            provides columns with header information, search and sort by game
+            information, and a preview of each game (see Figure 1b).
+          </p>
 
-            <p className="mb-4 text-gray-900">
-              In the database menu, each row on the left corresponds to a chess game and each column displays basic information 
-              about each game. On the right, there is a game preview of the currently selected game which can be navigated through 
-              the notation viewer or the arrow keys. Moreover, the user may open any chess game in the database by double-clicking 
-              any row, where a new window will appear containing the chess game:
-            </p>
+          <h3 id="adding-databases" className={h3}>
+            2.1 Adding Databases
+          </h3>
+          <p className={p}>
+            Add a new database from the main window by clicking{" "}
+            <span className={code}>Add Database</span> and selecting a{" "}
+            <span className={code}>.PGN</span> file from your file system (see
+            Figure 1a).
+          </p>
 
-            <div className="bg-gray-50 p-4 rounded-lg mb-6">
-              <p className="font-semibold mb-2 text-gray-900"><strong>Figure 1c</strong>: Game menu</p>
-              <Image src="/screenshots/Figure_2.1c.png" alt="Figure 2.1c" width={800} height={400} className="border rounded" />
-            </div>
+          <h3 id="game-preview" className={h3}>
+            2.2 Game Preview
+          </h3>
+          <p className={p}>
+            Step through a selected game using the same interface and controls as
+            the board menu in Section 3, including the forward and backward
+            buttons or keyboard shortcuts, directly from the preview panel (see
+            Figure 1b).
+          </p>
 
-            <p className="mb-8 text-gray-900">
-              In the game menu, the user is greeted by a chess board, a notation viewer, and options to open the Engine, 
-              Opening Explorer, and Game Review tools.
-            </p>
+          <h3 id="sorting-games" className={h3}>
+            2.3 Sorting Games
+          </h3>
+          <p className={p}>
+            Click a column header to sort the games by that column. Each click
+            reverses the sort order.
+          </p>
+          <Figure src="/screenshots/Figure_2.2.3a.png" caption="Figure 2.3a — Sorting by column headers" />
 
-            <h3 id="tab-system" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">1.1 Tab System</h3>
-            
-            <p className="mb-4 text-gray-900">
-              The user may wish to have multiple chess games and chess databases open simultaneously. The tab system has been 
-              designed to handle this requirement, where several menus can be opened within each window.
-            </p>
+          <h3 id="filtering-games" className={h3}>
+            2.4 Filtering Games
+          </h3>
+          <p className={p}>
+            Click the <span className={code}>Filter</span> button to open a dialog
+            with filtering options. Once applied, only games matching the selected
+            criteria are shown.
+          </p>
+          <Figure src="/screenshots/Figure_2.2.4a.png" caption="Figure 2.4a — Filter dialog with game information" />
 
-            <p className="mb-4 text-gray-900">
-              The main window consists of tabs that display chess databases. Each database is associated with a window with 
-              tabs that display each chess game.
-            </p>
+          <h3 id="customizing-headers" className={h3}>
+            2.5 Customizing Headers
+          </h3>
+          <p className={p}>
+            Right-click any header to open the header customization menu, where you
+            can add, remove, and reorder the shown headers.
+          </p>
+          <Figure src="/screenshots/Figure_2.2.5a.png" caption="Figure 2.5a — Custom headers dialog" />
 
-            <div className="bg-gray-50 p-4 rounded-lg mb-6">
-              <p className="font-semibold mb-2 text-gray-900"><strong>Figure 1.1a</strong>: Tab hierarchy</p>
-              <Image src="/screenshots/Figure_2.1.1a.png" alt="Figure 2.1.1a" width={800} height={400} className="border rounded" />
-            </div>
+          <h2 id="board-menu" className={h2}>
+            3. Board Menu
+          </h2>
+          <p className={p}>
+            The board menu is the interface for the currently loaded game. You can
+            make and navigate moves, analyze positions with engines, explore
+            openings, and use the game review tool (see Figure 1c).
+          </p>
 
-            <p className="mb-8 text-gray-900">
-              The tab hierarchy provides the framework for organising the program&apos;s various windows.
-            </p>
+          <h3 id="navigating-moves" className={h3}>
+            3.1 Navigating Moves
+          </h3>
+          <p className={p}>
+            Navigate through moves using the arrow buttons in the toolbar or the
+            left/right keys. All moves in the game tree appear in the notation
+            panel, where you can also click a move to jump to it.
+          </p>
 
-            <hr className="my-12 border-gray-300" />
+          <h3 id="saving-edits" className={h3}>
+            3.2 Saving Edits
+          </h3>
+          <p className={p}>
+            Save edits to a game into its PGN file with the toolbar button or the
+            shortcut <span className={code}>Ctrl + S</span>.
+          </p>
 
-            <h2 id="database-menu" className="text-3xl font-bold text-viridian-400 mt-12 mb-6">2. Database Menu</h2>
-            
-            <p className="mb-8 text-gray-900">
-              The database menu displays the list of chess games in a database. It provides columns that display header information, 
-              a search & sort based on game information, and a preview that displays each game.<br />
-              (See <strong>Figure 1b</strong>)
-            </p>
+          <h3 id="making-moves" className={h3}>
+            3.3 Making Moves and Variations
+          </h3>
+          <p className={p}>
+            Add moves by dragging and dropping pieces. Only legal moves are added
+            to the game tree and shown in the notation panel.
+          </p>
+          <p className={p}>
+            If a move is made from a position that already has a continuation, a
+            variation is created automatically. When you navigate to the next move
+            on a position with two or more variations, a dialog lets you choose
+            which to follow.
+          </p>
+          <Figure src="/screenshots/Figure_2.3.3a.png" caption="Figure 3.3a — Variation dialog with move selection" />
 
-            <h3 id="adding-databases" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">2.1 Adding Databases</h3>
-            
-            <p className="mb-8 text-gray-900">
-              The user can add a new database by navigating to the main window of the program and clicking on &quot;Add Database&quot;, 
-              selecting a <code>.PGN</code> file from the user&apos;s file system.<br />
-              (See <strong>Figure 1a</strong>)
-            </p>
+          <h3 id="deleting-moves" className={h3}>
+            3.4 Deleting Moves and Variations
+          </h3>
+          <p className={p}>
+            Delete all moves after the current position, including variations, with
+            the toolbar button or the shortcut <span className={code}>]</span>.
+            Remove the current variation with its toolbar button or{" "}
+            <span className={code}>Ctrl + D</span>.
+          </p>
 
-            <h3 id="game-preview" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">2.2 Game Preview</h3>
-            
-            <p className="mb-8 text-gray-900">
-              The user can go through a selected game using the same interface and controls as the board menu detailed in Section 3. 
-              This includes stepping through moves using the forward and backward buttons or keyboard shortcuts, allowing the user to 
-              play games directly from the database preview panel.<br />
-              (See <strong>Figure 1b</strong>)
-            </p>
+          <h3 id="comments-annotations" className={h3}>
+            3.5 Adding Comments and Annotations
+          </h3>
+          <p className={p}>
+            Add comments and annotate moves through the right-click menu on a move
+            in the notation viewer.
+          </p>
+          <Figure src="/screenshots/Figure_2.3.5a.png" caption="Figure 3.5a — Move annotation menu" />
 
-            <h3 id="sorting-games" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">2.3 Sorting Games</h3>
-            
-            <p className="mb-4 text-gray-900">
-              The user may click on a column header to sort the games based on that column. The sorting order will reverse 
-              (e.g. from ascending to descending) after each click.
-            </p>
+          <h3 id="game-review" className={h3}>
+            3.6 Game Review Tool
+          </h3>
+          <p className={p}>
+            Review your game with the Game Review tool, featuring a position
+            evaluation graph, accuracy ratings, and win percentages after each
+            move. Click any move on the graph to jump to it.
+          </p>
+          <Figure src="/screenshots/Figure_2.3.6a.png" caption="Figure 3.6a — Game review tool" />
 
-            <div className="bg-gray-50 p-4 rounded-lg mb-8">
-              <p className="font-semibold mb-2 text-gray-900"><strong>Figure 2.3a</strong>: Sorting by column headers</p>
-              <Image src="/screenshots/Figure_2.2.3a.png" alt="Figure 2.2.3a" width={800} height={400} className="border rounded" />
-            </div>
+          <h3 id="engine-analysis" className={h3}>
+            3.7 Engine Analysis
+          </h3>
+          <p className={p}>
+            Analyze the active position with a chess engine. On each position
+            change, the engine panel provides an evaluation and the best move.
+            Hover over a move in the engine line to preview it.
+          </p>
+          <p className={p}>
+            Upload an external UCI-compatible engine from the main window under{" "}
+            <span className={code}>Settings → Select Engine File</span>.
+          </p>
+          <Figure src="/screenshots/Figure_2.3.7a.png" caption="Figure 3.7a — Engine panel with evaluation and move suggestion" />
 
-            <h3 id="filtering-games" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">2.4 Filtering Games</h3>
-            
-            <p className="mb-4 text-gray-900">
-              The user may click on the &quot;Filter&quot; button which will open a dialogue with filtering options. Once applied, 
-              only games that match the selected criteria will be displayed in the list.
-            </p>
-
-            <div className="bg-gray-50 p-4 rounded-lg mb-8">
-              <p className="font-semibold mb-2 text-gray-900"><strong>Figure 2.4a</strong>: Filter dialogue with game information</p>
-              <Image src="/screenshots/Figure_2.2.4a.png" alt="Figure 2.2.4a" width={800} height={400} className="border rounded" />
-            </div>
-
-            <h3 id="customizing-headers" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">2.5 Customizing Headers</h3>
-            
-            <p className="mb-4 text-gray-900">
-              The user may right-click on any header to access the header customization menu. The user may then add, remove, and reorder the shown headers.
-            </p>
-
-            <div className="bg-gray-50 p-4 rounded-lg mb-8">
-              <p className="font-semibold mb-2 text-gray-900"><strong>Figure 2.5a</strong>: Custom headers dialogue</p>
-              <Image src="/screenshots/Figure_2.2.5a.png" alt="Figure 2.2.5a" width={800} height={400} className="border rounded" />
-            </div>
-
-            <hr className="my-12 border-gray-300" />
-
-            <h2 id="board-menu" className="text-3xl font-bold text-viridian-400 mt-12 mb-6">3. Board Menu</h2>
-            
-            <p className="mb-8 text-gray-900">
-              The board menu provides the interface for interacting with the currently loaded chess game. It allows the user to 
-              make and navigate moves, analyze positions with engines, explore openings through an opening database, and access 
-              the game review tool.<br />
-              (<strong>Figure 1c</strong>)
-            </p>
-
-            <h3 id="navigating-moves" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">3.1 Navigating Moves</h3>
-            
-            <p className="mb-8 text-gray-900">
-              The user can navigate through the moves of a game using the arrow buttons in the toolbar or the left/right keyboard 
-              shortcuts. All moves in the game tree are displayed in the notation panel, where users can also click on specific 
-              moves to jump to them directly.
-            </p>
-
-            <h3 id="saving-edits" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">3.2 Saving Edits</h3>
-            
-            <p className="mb-8 text-gray-900">
-              The user may save any edits to a game into its PGN file through the button in the toolbar or the shortcut <code>Ctrl + S</code>.
-            </p>
-
-            <h3 id="making-moves" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">3.3 Making Moves and Variations</h3>
-            
-            <p className="mb-4 text-gray-900">
-              The user may add moves on the board by dragging and dropping pieces. Only legal chess moves will be added to the 
-              game tree and displayed on the notation panel.
-            </p>
-
-            <p className="mb-4 text-gray-900">
-              Additionally, if a move is made from a position that already has a continuation, a variation is automatically created. 
-              When the user attempts to navigate to the next move on a position with two or more variations, a variation dialogue 
-              will appear allowing the user to choose which variation to follow.
-            </p>
-
-            <div className="bg-gray-50 p-4 rounded-lg mb-8">
-              <p className="font-semibold mb-2 text-gray-900"><strong>Figure 3.3a</strong>: Variation dialogue with move selection</p>
-              <Image src="/screenshots/Figure_2.3.3a.png" alt="Figure 2.3.3a" width={800} height={400} className="border rounded" />
-            </div>
-
-            <h3 id="deleting-moves" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">3.4 Deleting Moves and Variations</h3>
-            
-            <p className="mb-8 text-gray-900">
-              The user can delete all moves after the current position including variations by clicking the toolbar button or 
-              the keyboard shortcut <code>]</code>.<br />
-              Additionally, the user can remove the current variation by clicking the toolbar button or the keyboard shortcut <code>Ctrl + D</code>.
-            </p>
-
-            <h3 id="comments-annotations" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">3.5 Adding Comments and Annotations</h3>
-            
-            <p className="mb-4 text-gray-900">
-              The user can add comments and annotate moves through the right-click menu on a given move in the notation viewer.
-            </p>
-
-            <div className="bg-gray-50 p-4 rounded-lg mb-8">
-              <p className="font-semibold mb-2 text-gray-900"><strong>Figure 3.5a</strong>: Move annotation menu</p>
-              <Image src="/screenshots/Figure_2.3.5a.png" alt="Figure 2.3.5a" width={800} height={400} className="border rounded" />
-            </div>
-
-            <h3 id="game-review" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">3.6 Game Review Tool</h3>
-            
-            <p className="mb-4 text-gray-900">
-              The user may review their game using the Game Review tool, featuring a position evaluation graph, accuracy ratings, 
-              and win percentages after given moves.
-            </p>
-
-            <p className="mb-4 text-gray-900">
-              Each move represented on the graph may be quickly navigated to by left-clicking on the given move.
-            </p>
-
-            <div className="bg-gray-50 p-4 rounded-lg mb-8">
-              <p className="font-semibold mb-2 text-gray-900"><strong>Figure 3.6a</strong>: Game review tool</p>
-              <Image src="/screenshots/Figure_2.3.6a.png" alt="Figure 2.3.6a" width={800} height={400} className="border rounded" />
-            </div>
-
-            <h3 id="engine-analysis" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">3.7 Engine Analysis</h3>
-            
-            <p className="mb-4 text-gray-900">
-              The active position can be analyzed using a chess engine. Upon changing a position, the engine panel will automatically 
-              provide a chess evaluation of the position along with the best move. The user can preview a given move by hovering over 
-              the move in the engine line.
-            </p>
-
-            <p className="mb-4 text-gray-900">
-              The user can upload an external UCI-compatible chess engine of their choice by navigating to the main window and 
-              selecting <code>Settings -&gt; Select Engine File</code>.
-            </p>
-
-            <div className="bg-gray-50 p-4 rounded-lg mb-8">
-              <p className="font-semibold mb-2 text-gray-900"><strong>Figure 3.7a</strong>: Engine panel with evaluation and move suggestion</p>
-              <Image src="/screenshots/Figure_2.3.7a.png" alt="Figure 2.3.7a" width={800} height={400} className="border rounded" />
-            </div>
-
-            <h3 id="opening-explorer" className="text-2xl font-bold text-viridian-400 mt-10 mb-4">3.8 Opening Explorer Tool</h3>
-            
-            <p className="mb-4 text-gray-900">
-              The user can review games achieving a given position and statistics through the opening explorer tool, which takes 
-              games from an uploaded opening database. An opening database can be uploaded by navigating to the main window and 
-              selecting <code>Settings -&gt; Openings -&gt; Upload Opening Database</code>.
-            </p>
-
-            <div className="bg-gray-50 p-4 rounded-lg mb-8">
-              <p className="font-semibold mb-2 text-gray-900"><strong>Figure 3.8a</strong>: Opening explorer tool</p>
-              <Image src="/screenshots/Figure_2.3.8a.png" alt="Figure_2.3.8a" width={800} height={400} className="border rounded" />
-            </div>
-          </div>
-        </div>
+          <h3 id="opening-explorer" className={h3}>
+            3.8 Opening Explorer Tool
+          </h3>
+          <p className={p}>
+            Review games that reached a given position, along with statistics,
+            using the opening explorer. It draws from an uploaded opening database,
+            which you can add from the main window under{" "}
+            <span className={code}>Settings → Openings → Upload Opening Database</span>.
+          </p>
+          <Figure src="/screenshots/Figure_2.3.8a.png" caption="Figure 3.8a — Opening explorer tool" />
+        </article>
       </main>
 
       <Footer />

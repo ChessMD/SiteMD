@@ -1,73 +1,138 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import DownloadButton from "@/components/DownloadButton";
-import BackgroundPattern from "@/components/BackgroundPattern";
+
+const primaryBtn =
+  "inline-flex w-full items-center justify-center rounded-lg bg-accent px-4 py-3 text-sm font-medium text-on-accent transition-colors hover:bg-accent-hover";
+
+const WindowsIcon = (
+  <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M3 5.1 10.4 4v7.1H3V5.1Zm0 13.8 7.4 1v-7H3v6ZM11.3 3.9 21 2.5v8.6h-9.7V3.9Zm0 16.2L21 21.5v-8.6h-9.7v7.2Z" />
+  </svg>
+);
+
+const AppleIcon = (
+  <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M16.37 1.43c.05 1.02-.36 2.02-1.02 2.74-.69.75-1.78 1.33-2.84 1.25-.07-.98.38-2 1.02-2.68.71-.77 1.92-1.35 2.84-1.31ZM19.5 17.1c-.5 1.15-.74 1.66-1.38 2.68-.9 1.43-2.16 3.2-3.73 3.22-1.4.01-1.75-.9-3.64-.89-1.89.01-2.28.91-3.67.9-1.57-.02-2.77-1.63-3.66-3.05-2.5-3.98-2.77-8.66-1.22-11.14 1.1-1.77 2.84-2.8 4.47-2.8 1.67 0 2.72.9 4.1.9 1.34 0 2.15-.91 4.08-.91 1.46 0 3 .79 4.11 2.16-3.61 1.97-3.03 7.1.44 8.43Z" />
+  </svg>
+);
+
+const LinuxIcon = (
+  <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M9 3.5c-1 .8-1.3 2.2-1.2 3.6.1 1.3-.4 2.2-1.1 3.3C5.6 12 4.5 13.6 5 15.4c.3 1.1 1.2 1.6 1.4 2.5.2.8-.3 1.6.3 2.2.7.7 2 .6 3.3.6h2c1.3 0 2.6.1 3.3-.6.6-.6.1-1.4.3-2.2.2-.9 1.1-1.4 1.4-2.5.5-1.8-.6-3.4-1.7-5-.7-1.1-1.2-2-1.1-3.3.1-1.4-.2-2.8-1.2-3.6-.9-.7-2.4-.7-3.3 0Z" />
+    <path d="M9.5 8.2c0 .4.3.7.6.7M14.5 8.2c0 .4-.3.7-.6.7" />
+    <path d="M10.5 11.5c.5.5 2.5.5 3 0" />
+  </svg>
+);
+
+const platforms = [
+  {
+    name: "Windows",
+    icon: WindowsIcon,
+    requirement: "Windows 10/11 (64-bit)",
+    buttons: [
+      {
+        href: "https://apps.microsoft.com/detail/XPFFTX69WQS18M?hl=en-US&gl=US&ocid=pdpshare",
+        label: "Installer",
+        note: "Recommended",
+      },
+      {
+        href: "https://github.com/ChessMD/ChessMD/releases/download/v1.1/ChessMD_portable.zip",
+        label: "Portable",
+      },
+    ],
+  },
+  {
+    name: "macOS",
+    icon: AppleIcon,
+    requirement: "macOS 12+ (Intel / Apple Silicon)",
+    buttons: [
+      {
+        href: "https://github.com/ChessMD/ChessMD/releases/download/v1.1/ChessMD.pkg",
+        label: "Download",
+      },
+    ],
+  },
+  {
+    name: "Linux",
+    icon: LinuxIcon,
+    requirement: "Most modern distributions",
+    buttons: [
+      {
+        href: "https://github.com/ChessMD/ChessMD/releases/download/v1.1/ChessMD.tar.gz",
+        label: "x86",
+      },
+      {
+        href: "https://github.com/ChessMD/ChessMD/releases/download/v1.1/ChessMD-aarch64.tar.gz",
+        label: "ARM64",
+      },
+    ],
+  },
+];
 
 export default function Download() {
   return (
-    <div className="min-h-screen bg-viridian-400 relative">
-      <BackgroundPattern />
+    <div className="min-h-screen">
       <Navigation currentPage="download" />
 
-      <main className="container mx-auto px-6 relative z-10">
-        <section className="py-20 text-center">
-          <h2 className="text-5xl md:text-7xl font-black text-mint-cream mb-0 drop-shadow-lg flex flex-col items-center">
-            Download
-            <span className="text-lg md:text-2xl font-semibold text-white-200 mt-2">
-              Version: <span className="font-mono text-mint-cream-400">v1.1</span>
-            </span>
-          </h2>
-          <div className="mt-6 text-center mb-8">
-              <a href="https://github.com/ChessMD/ChessMD/releases" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 text-base md:text-m font-bold rounded-lg border-2 border-viridian-600 text-mint-cream bg-white/5 hover:bg-white/10 transition-colors">
-                All releases & older versions
-              </a>
-          </div>
-          <p className="text-xl font-bold text-emerald-100 mb-6 max-w-3xl mx-auto leading-relaxed">
-            Get the latest version of ChessMD for your platform.
+      <main className="mx-auto max-w-6xl px-6 py-20">
+        <section className="text-center">
+          <h1 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+            Download ChessMD
+          </h1>
+          <p className="mt-4 text-ink-muted">
+            Free on Windows, macOS, and Linux. Current version{" "}
+            <span className="font-mono text-ink">v1.1</span>.
           </p>
-          <div className="grid md:grid-cols-3 gap-12 max-w-8xl mx-auto">
-            <div className="bg-mint-cream/98 backdrop-blur-sm rounded-2xl p-8 border-2 border-viridian-600/50 shadow-2xl">
-              <div className="w-16 h-16 bg-cambridge-blue-600 rounded-lg flex items-center justify-center mb-6 mx-auto shadow-lg">
-                <span className="text-mint-cream font-bold text-2xl">🪟</span>
-              </div>
-              <h3 className="text-3xl font-black text-coffee-400 mb-4">Windows</h3>
-              <p className="text-coffee-600 text-sm mb-6">Windows 10/11 (64-bit)</p>
-              <div className="flex flex-wrap gap-4 w-full justify-center">
-                <DownloadButton href="https://apps.microsoft.com/detail/XPFFTX69WQS18M?hl=en-US&gl=US&ocid=pdpshare" className="flex-grow min-w-[11rem] max-w-[28rem] bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors shadow-md text-lg text-center">
-                  Installer
-                  <span className="block  text-sm font-medium leading-none"> (Recommended) </span>
-                </DownloadButton>
-                <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.1/ChessMD_portable.zip" className="flex-grow min-w-[11rem] max-w-[28rem] bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200  transition-colors shadow-md text-lg text-center">
-                  Portable
-                </DownloadButton>
-              </div>
-            </div>
-            <div className="bg-mint-cream/98 backdrop-blur-sm rounded-2xl p-8 border-2 border-viridian-600/50 shadow-2xl">
-              <div className="w-16 h-16 bg-cambridge-blue-600 rounded-lg flex items-center justify-center mb-6 mx-auto shadow-lg">
-                <span className="text-mint-cream font-bold text-2xl">🍎</span>
-              </div>
-              <h3 className="text-3xl font-black text-coffee-400 mb-4">macOS</h3>
-              <p className="text-coffee-600 font-medium text-sm mb-6">macOS 12+ (Intel/Apple Silicon)</p>
-              <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.1/ChessMD.pkg" className="bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors w-full shadow-md text-lg">
-                Download 
-              </DownloadButton>
-            </div>
-            <div className="bg-mint-cream/98 backdrop-blur-sm rounded-2xl p-8 border-2 border-viridian-600/50 shadow-2xl">
-              <div className="w-16 h-16 bg-cambridge-blue-600 rounded-lg flex items-center justify-center mb-6 mx-auto shadow-lg">
-                <span className="text-mint-cream font-bold text-2xl">🐧</span>
-              </div>
-              <h3 className="text-3xl font-black text-coffee-400 mb-4">Linux</h3>
-              <p className="text-coffee-600 font-medium text-sm mb-6">Most modern distributions</p>              
-              <div className="flex flex-wrap gap-4 w-full justify-center">
-                <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.1/ChessMD.tar.gz" className="flex-grow min-w-[11rem] max-w-[28rem] bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200 transition-colors shadow-md text-lg text-center">
-                  x86
-                </DownloadButton>
-                <DownloadButton href="https://github.com/ChessMD/ChessMD/releases/download/v1.1/ChessMD-aarch64.tar.gz" className="flex-grow min-w-[11rem] max-w-[28rem] bg-coffee-600 hover:bg-coffee-700 text-mint-cream font-bold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-200  transition-colors shadow-md text-lg text-center">
-                  ARM64
-                </DownloadButton>
-              </div>
-            </div>
+          <div className="mt-6">
+            <a
+              href="https://github.com/ChessMD/ChessMD/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-lg border border-border-subtle px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+            >
+              All releases &amp; older versions
+            </a>
           </div>
+        </section>
+
+        <section className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {platforms.map((platform) => (
+            <div
+              key={platform.name}
+              className="flex flex-col rounded-xl border border-border-subtle bg-surface p-7 text-center transition-colors hover:border-accent"
+            >
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-surface-muted text-accent">
+                {platform.icon}
+              </div>
+              <h2 className="font-display mt-5 text-xl font-bold text-ink">
+                {platform.name}
+              </h2>
+              <p className="mt-1 text-sm text-ink-muted">{platform.requirement}</p>
+              <div className="mt-6 flex flex-1 flex-col justify-end">
+                <div
+                  className={`grid gap-3 ${
+                    platform.buttons.length > 1 ? "grid-cols-2" : "grid-cols-1"
+                  }`}
+                >
+                  {platform.buttons.map((button) => (
+                    <DownloadButton
+                      key={button.label}
+                      href={button.href}
+                      className={primaryBtn}
+                    >
+                      {button.label}
+                    </DownloadButton>
+                  ))}
+                </div>
+                {platform.buttons.some((b) => b.note) && (
+                  <p className="mt-3 text-xs text-ink-muted">
+                    {platform.buttons.find((b) => b.note)?.label} is recommended.
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
         </section>
       </main>
 
