@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
+/* Tell Tailwind v4 to treat `.dark` on an ancestor as the dark variant. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
+  /* ---- Brand palette (kept from the original design) ---- */
   --color-viridian: #6b9080;
   --color-viridian-100: #151d19;
   --color-viridian-200: #2a3933;
@@ -11,7 +15,7 @@
   --color-viridian-700: #a5bdb3;
   --color-viridian-800: #c3d3cc;
   --color-viridian-900: #e1e9e6;
-  
+
   --color-cambridge-blue: #a4c3b2;
   --color-cambridge-blue-100: #1c2b23;
   --color-cambridge-blue-200: #385646;
@@ -22,7 +26,7 @@
   --color-cambridge-blue-700: #c7dbd0;
   --color-cambridge-blue-800: #dae7e0;
   --color-cambridge-blue-900: #ecf3ef;
-  
+
   --color-coffee: #6d4c3d;
   --color-coffee-100: #160f0c;
   --color-coffee-200: #2b1e18;
@@ -33,43 +37,60 @@
   --color-coffee-700: #b58e7c;
   --color-coffee-800: #ceb4a8;
   --color-coffee-900: #e6d9d3;
-  
+
   --color-mint-cream: #f6fff8;
-  --color-mint-cream-100: #006416;
-  --color-mint-cream-200: #00c82b;
-  --color-mint-cream-300: #2dff5a;
-  --color-mint-cream-400: #91ffa9;
-  --color-mint-cream-500: #f6fff8;
-  --color-mint-cream-600: #f7fff9;
-  --color-mint-cream-700: #f9fffa;
-  --color-mint-cream-800: #fbfffc;
-  --color-mint-cream-900: #fdfffd;
+
+  /* ---- Semantic tokens (resolve per theme, see :root / .dark below) ---- */
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border-subtle: var(--border-subtle);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bricolage), var(--font-inter), ui-sans-serif, sans-serif;
+  --font-mono: ui-monospace, "Courier New", monospace;
 }
 
+/* Light theme (default) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --canvas: #e6efe9;          /* soft mint-sage, keeps the white screenshot from blending in */
+  --surface: #f3f8f5;
+  --surface-muted: #dde9e2;
+  --border-subtle: #c6d7cd;
+  --ink: #1f2a26;
+  --ink-muted: #5a6b64;
+  --accent: #557366;          /* viridian 400 */
+  --accent-hover: #40564c;    /* viridian 300 */
+  --on-accent: #f6fff8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Dark theme */
+.dark {
+  --canvas: #121715;
+  --surface: #1a211e;
+  --surface-muted: #222b27;
+  --border-subtle: #30403a;
+  --ink: #e6ede9;
+  --ink-muted: #9db0a8;
+  --accent: #87a799;          /* viridian 600, lifts off the dark canvas */
+  --accent-hover: #a5bdb3;    /* viridian 700 */
+  --on-accent: #121715;
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   html {
-    @apply scroll-smooth;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
   }
 }
