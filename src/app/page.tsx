@@ -1,120 +1,143 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import DownloadButton from "@/components/DownloadButton";
 import Image from "next/image";
 import Link from "next/link";
 
-import BackgroundPattern from "@/components/BackgroundPattern";
+const features = [
+  {
+    title: "Database management",
+    body: "Import PGN files and organize your game collections across multiple databases.",
+    icon: (
+      <>
+        <ellipse cx="12" cy="6" rx="8" ry="3" />
+        <path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" />
+      </>
+    ),
+  },
+  {
+    title: "Intuitive navigation",
+    body: "Work with multiple games and databases at once using a tabbed interface.",
+    icon: <path d="M9 5l7 7-7 7" />,
+  },
+  {
+    title: "Game review",
+    body: "Analyze your games with annotations, comments, and move-by-move insight.",
+    icon: <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />,
+  },
+  {
+    title: "Engine analysis",
+    body: "Real-time evaluation and best-move suggestions with UCI engine support.",
+    icon: (
+      <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+    ),
+  },
+];
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-viridian-400 relative">
-      <BackgroundPattern />
+    <div className="min-h-screen">
       <Navigation currentPage="home" />
 
-      <main className="container mx-auto px-6 relative z-10">
-        {/*the main big text area */}
-        <section className="text-center py-20">
-          <h2 className="text-5xl md:text-7xl font-black text-mint-cream mb-4 drop-shadow-lg">
-            Master Chess with <span className="bg-coffee-800 bg-clip-text text-transparent"> ChessMD</span>,
-          </h2>
-          <p className="text-5xl mb-6 font-black text-mint-cream drop-shadow-lg"> 
-            the ultimate chess training software.  
+      <main>
+        {/* Hero */}
+        <section className="mx-auto max-w-4xl px-6 pb-20 pt-20 text-center sm:pt-28">
+          <h1 className="font-display text-balance text-4xl font-bold leading-[1.1] tracking-tight text-ink sm:text-6xl">
+            Master chess with <span className="text-accent">ChessMD</span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-xl text-balance text-base leading-relaxed text-ink-muted sm:text-lg">
+            Improve your game with unlimited game review, interactive engine
+            analysis, and training tools built by chess masters.
           </p>
 
-          <p className="text-2xl font-medium text-cambridge-blue-600 mb-12 max-w-6xl mx-auto leading-relaxed">
-            Improve your game with unlimited game review, interactive engine anlaysis, and several other state-of-the-art training utilities developed by chess masters.
-          </p>
-          {/* use download button component cuz client side rendering */}
-          <div className="flex justify-center gap-6 w-lg mx-auto">
-            <Link href="/download" className="flex-1 bg-coffee-600 text-mint-cream font-bold px-8 py-4 rounded-lg text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 hover:bg-coffee-700 shadow-lg">
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              href="/download"
+              className="inline-flex w-full items-center justify-center rounded-lg bg-accent px-6 py-3 text-base font-medium text-on-accent transition-colors hover:bg-accent-hover sm:w-auto"
+            >
               Download ChessMD
             </Link>
-            <a href="https://github.com/ChessMD/ChessMD" target="_blank" rel="noopener noreferrer" className="flex-1 bg-emerald-200 text-black font-bold px-8 py-4 rounded-lg text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 hover:bg-emerald-100 shadow-lg">
-              View Our Github 
+            <a
+              href="https://github.com/ChessMD/ChessMD"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center rounded-lg border border-border-subtle px-6 py-3 text-base font-medium text-ink transition-colors hover:border-accent hover:text-accent sm:w-auto"
+            >
+              View on GitHub
             </a>
           </div>
         </section>
 
-        {/* features section with the \boxes */}
-        <section className="py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-6">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/15 transition-all duration-300 border border-white/20">
-              <div className="bg-coffee-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                {/* icon 1 (i did not make this myself) */}
-                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <ellipse cx="12" cy="6" rx="8" ry="3" stroke="currentColor" strokeWidth={2} fill="none"/>
-                  <path stroke="currentColor" strokeWidth={2} fill="none" d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/>
-                </svg>
-              </div>
-              <h4 className="text-xl font-bold text-mint-cream mb-3">
-                Database Management
-              </h4>
-              <p className="text-emerald-100 leading-relaxed">
-                Browse and manage multiple chess databases with ease. Import PGN
-                files and organize your game collections.
-              </p>
-            </div>
+        {/* Screenshot */}
+        <section className="mx-auto max-w-5xl px-6">
+          <figure className="overflow-hidden rounded-xl border border-border-subtle bg-surface">
+            <Image
+              src="/screenshots/Figure_2.1c.png"
+              alt="ChessMD game analysis screen"
+              width={1920}
+              height={1080}
+              className="w-full"
+              priority
+            />
+          </figure>
+          <figcaption className="mt-3 text-center text-sm text-ink-muted">
+            The ChessMD game analysis screen
+          </figcaption>
+        </section>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/15 transition-all duration-300 border border-white/20">
-              <div className="bg-coffee-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                {/* icon 2 (i did not make this one myself in fact i didnt make any of them myself) */}
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
-                </svg>
-              </div>
-              <h4 className="text-xl font-bold text-mint-cream mb-3">
-                Intuitive Navigation
-              </h4>
-              <p className="text-emerald-100 leading-relaxed">
-                Work with multiple games simultaneously using tabs. Switch between
-                databases and study organized!
-              </p>
-            </div>
+        {/* Features */}
+        <section className="mx-auto max-w-6xl px-6 py-24">
+          <h2 className="font-display text-center text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+            Everything you need to study
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-center text-ink-muted">
+            A focused set of tools for reviewing, analyzing, and organizing your games.
+          </p>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/15 transition-all duration-300 border border-white/20">
-              <div className="bg-coffee-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                {/* what i said before 3*/}
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {features.map((feature) => (
+              <div
+                key={feature.title}
+                className="rounded-xl border border-border-subtle bg-surface p-6 transition-colors hover:border-accent"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-surface-muted text-accent">
+                  <svg
+                    className="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.8}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    {feature.icon}
+                  </svg>
+                </div>
+                <h3 className="mt-4 text-base font-semibold text-ink">
+                  {feature.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                  {feature.body}
+                </p>
               </div>
-              <h4 className="text-xl font-bold text-mint-cream mb-3">
-                Game Review
-              </h4>
-              <p className="text-emerald-100 leading-relaxed">
-                Analyze your games with detailed review tools. Add annotations,
-                comments, and identify brilliant ideas!
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/15 transition-all duration-300 border border-white/20">
-              <div className="bg-coffee-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                {/* same thing 4 */}
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                </svg>
-              </div>
-              <h4 className="text-xl font-bold text-mint-cream mb-3">
-                Engine Analysis
-              </h4>
-              <p className="text-emerald-100 leading-relaxed">
-                Real-time position analysis with UCI engine support. Get instant
-                evaluations and best move suggestions.
-              </p>
-            </div>
+            ))}
           </div>
+        </section>
 
-          {/* screenshot area*/}
-          <div className="mt-16 text-center">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mx-auto max-w-6xl border border-white/20">
-              <div className="bg-gray-200 rounded-lg aspect-video flex items-center justify-center mb-6 overflow-hidden">
-                <Image src="/screenshots/Figure_2.1c.png" alt="ChessMD game analysis screen" width={1920} height={1080} className="w-full h-full object-contain rounded-lg" priority/>
-              </div>
-              <p className="text-emerald-100 text-2xl font-bold">
-                ChessMD game analysis screen
-              </p>
-            </div>
+        {/* Call to action band — deliberate use of the brand color */}
+        <section className="bg-accent">
+          <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 px-6 py-16 text-center">
+            <h2 className="font-display text-balance text-2xl font-bold tracking-tight text-on-accent sm:text-3xl">
+              Ready to start studying?
+            </h2>
+            <p className="max-w-xl text-on-accent/80">
+              ChessMD is free and available on Windows, macOS, and Linux.
+            </p>
+            <Link
+              href="/download"
+              className="inline-flex items-center justify-center rounded-lg bg-canvas px-6 py-3 text-base font-medium text-accent transition-opacity hover:opacity-90"
+            >
+              Download ChessMD
+            </Link>
           </div>
         </section>
       </main>
